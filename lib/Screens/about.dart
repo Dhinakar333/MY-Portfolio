@@ -25,8 +25,6 @@ class _AboutPageState extends State<AboutPage> {
         child: Column(
           children: [
             Text("I'm Dhinakar, proficient flutter developer"),
-            Image.asset("assets/dhinakar.jpg"),
-            Image.asset("assets/icons/instagramlogo.png")
           ],
         ),
       ),

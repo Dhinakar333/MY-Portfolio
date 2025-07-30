@@ -142,7 +142,7 @@ class HomePage extends StatelessWidget {
                       ),
                       child: CircleAvatar(
                         radius: 80,
-                        backgroundImage: AssetImage("dhinakar.jpg"),
+                        backgroundImage: AssetImage("assets/dhinakar.jpg"),
                       ),
                     ),
 
