@@ -42,12 +42,8 @@ class HomePage extends StatelessWidget {
           Row(
             children: [
               Tooltip(
-                message: "Download my Resume",
-                child: IconButton(onPressed: (){
-                  Navigator.push(context,
-                  MaterialPageRoute(
-                      builder: (context)=> ResumePage()));
-                },
+                message: "Resume",
+                child: IconButton(onPressed:launchResume,
                     icon: Icon(Icons.download,
                       color: Colors.black,),
                   iconSize: 20,
@@ -140,9 +136,12 @@ class HomePage extends StatelessWidget {
                           color: Colors.blue,
                         ),
                       ),
-                      child: CircleAvatar(
-                        radius: 80,
-                        backgroundImage: AssetImage("assets/dhinakar.jpg"),
+                      child: Tooltip(
+                        message: "Me",
+                        child: CircleAvatar(
+                          radius: 80,
+                          backgroundImage: AssetImage("assets/dhinakar.jpg"),
+                        ),
                       ),
                     ),
 
@@ -183,7 +182,6 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-
               const SizedBox(height: 30),
 
               // Project Button
