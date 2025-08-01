@@ -27,11 +27,11 @@ void launchGmail() async{
   final url = Uri(
     scheme: 'mailto',
     path: 'dhinakard41@gmail.com',
-    query: 'subject=Contact&body=Hi Dhinakar,',
+    query: Uri.encodeFull('subject=Contact&body=Hi Dhinakar,'),
   );
 
   if (await canLaunchUrl(url)){
-    await launchUrl(url);
+    await launchUrl(url,mode: LaunchMode.externalApplication);
   }
   else{
     throw 'Could not launch $url';

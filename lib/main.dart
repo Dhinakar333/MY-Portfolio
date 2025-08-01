@@ -34,26 +34,26 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 50,
         title: const Text("Welcome to my Portfolio",
-        style: TextStyle(
-          fontSize: 18,
-        ),),
+          style: TextStyle(
+            fontSize: 18,
+          ),),
         backgroundColor: Colors.black12,
         actions: [
           Row(
             children: [
               Tooltip(
                 message: "Resume",
-                child: IconButton(onPressed:launchResume,
-                    icon: Icon(Icons.download,
-                      color: Colors.black,),
+                child: IconButton(onPressed: launchResume,
+                  icon: Icon(Icons.download,
+                    color: Colors.black,),
                   iconSize: 20,
-                    style: ButtonStyle(
-                      side: WidgetStatePropertyAll(BorderSide(
+                  style: ButtonStyle(
+                    side: WidgetStatePropertyAll(BorderSide(
                         width: 1,
                         color: Colors.blue
-                      )),
-                    ),
-                    ),
+                    )),
+                  ),
+                ),
               ),
               const SizedBox(width: 30,)
             ],
@@ -72,118 +72,17 @@ class HomePage extends StatelessWidget {
                   children: [
                     SizedBox(width: 60,),
                     // Intro Text
-                    Padding(
-                      padding: const EdgeInsets.all(40.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Text("HI",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 26,
-                                color: Colors.blue,
-                                fontStyle: FontStyle.normal,
-                              ),
-                          ),
-                          const Text("I'm Dhinakar",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 36,
-                                color: Colors.blue,
-                                fontStyle: FontStyle.italic,
-                              )),
-                          const SizedBox(height: 25,),
-                          Row(
-                            children: [
-                              IconButton(onPressed: launchLinkedIn,
-                                  icon: Image.asset("assets/linkedinlogo.png",
-                                    height: 30,
-                                    width: 30,)
-                              ),
-                             IconButton(onPressed: launchInstagram,
-                                 icon: Image.asset("assets/instagramlogo.png",
-                                   height: 30,
-                                   width: 30,)
-                             ),
-                              IconButton(onPressed: launchGmail,
-                                 icon: Image.asset("assets/gmaillogo.png",
-                                   height: 30,
-                                   width: 30,)
-                              ),
-                              IconButton(onPressed: launchGithub,
-                                 icon: Image.asset("assets/githublogo.png",
-                                   height: 30,
-                                   width: 30,)
-                              ),
-                            ],
-                          )
-
-                        ],
-                      ),
-                    ),
-
+                    nameSocialApps(),
                     const SizedBox(width: 30),
-
                     // Profile Image
-                    Container(
-                      margin: const EdgeInsets.all(20),
-                      height: 250,
-                      width: 300,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        border: Border.all(
-                          width: 3,
-                          color: Colors.blue,
-                        ),
-                      ),
-                      child: Tooltip(
-                        message: "Me",
-                        child: CircleAvatar(
-                          radius: 80,
-                          backgroundImage: AssetImage("assets/dhinakar.jpg"),
-                        ),
-                      ),
-                    ),
-
+                    profileImage(),
                     const SizedBox(width: 70),
-
                     // Role and Button
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text("Flutter",
-                            style: TextStyle(fontSize: 30)),
-                        const Text("Developer",
-                            style: TextStyle(fontSize: 30)),
-                        SizedBox(height: 20,),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                  const ProjectPage()),
-                            );
-                          },
-                          style: ButtonStyle(
-                            side: WidgetStateProperty.all(BorderSide(
-                              color: Colors.blue,
-                              width: 2,
-                            ))
-                          ),
-                          child: Text("Explore Works",
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 22,
-                              )),
-                        ),
-                      ],
-                    ),
+                    roleExploreButton(context),
                   ],
                 ),
               ),
               const SizedBox(height: 30),
-
               // Project Button
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -197,10 +96,10 @@ class HomePage extends StatelessWidget {
                       );
                     },
                     style: ButtonStyle(
-                      side: WidgetStateProperty.all(BorderSide(
-                        color: Colors.blue,
-                        width: 2,
-                      ))
+                        side: WidgetStateProperty.all(BorderSide(
+                          color: Colors.blue,
+                          width: 2,
+                        ))
                     ),
                     child: const Text("About"),
                   ),
@@ -214,10 +113,10 @@ class HomePage extends StatelessWidget {
                       );
                     },
                     style: ButtonStyle(
-                      side: WidgetStateProperty.all(BorderSide(
-                        width: 2,
-                        color: Colors.blue
-                      ))
+                        side: WidgetStateProperty.all(BorderSide(
+                            width: 2,
+                            color: Colors.blue
+                        ))
                     ),
                     child: const Text("Projects"),
                   ),
@@ -231,10 +130,10 @@ class HomePage extends StatelessWidget {
                       );
                     },
                     style: ButtonStyle(
-                      side: WidgetStateProperty.all(BorderSide(
-                        width: 2,
-                        color: Colors.blue
-                      ))
+                        side: WidgetStateProperty.all(BorderSide(
+                            width: 2,
+                            color: Colors.blue
+                        ))
                     ),
                     child: const Text("Skills"),
                   ),
@@ -248,10 +147,10 @@ class HomePage extends StatelessWidget {
                       );
                     },
                     style: ButtonStyle(
-                      side: WidgetStatePropertyAll(BorderSide(
-                        width: 2,
-                        color: Colors.blue
-                      ))
+                        side: WidgetStatePropertyAll(BorderSide(
+                            width: 2,
+                            color: Colors.blue
+                        ))
                     ),
                     child: const Text("Education"),
                   ),
@@ -259,14 +158,14 @@ class HomePage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(context,
-                      MaterialPageRoute(
-                          builder: (context) => const ContactPage()));
+                          MaterialPageRoute(
+                              builder: (context) => const ContactPage()));
                     },
                     style: ButtonStyle(
-                      side: WidgetStatePropertyAll(BorderSide(
-                        width:2,
-                        color: Colors.blue,
-                      ))
+                        side: WidgetStatePropertyAll(BorderSide(
+                          width: 2,
+                          color: Colors.blue,
+                        ))
                     ),
                     child: const Text("Contact"),
                   ),
@@ -279,4 +178,111 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget roleExploreButton(BuildContext context) {
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const Text("Flutter",
+          style: TextStyle(fontSize: 30)),
+      const Text("Developer",
+          style: TextStyle(fontSize: 30)),
+      SizedBox(height: 20,),
+      ElevatedButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                const ProjectPage()),
+          );
+        },
+        style: ButtonStyle(
+            side: WidgetStateProperty.all(BorderSide(
+              color: Colors.blue,
+              width: 2,
+            ))
+        ),
+        child: Text("Explore Works",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 22,
+            )),
+      ),
+    ],
+  );
+}
+ Widget profileImage() {
+  return Container(
+     margin: const EdgeInsets.all(20),
+     height: 250,
+     width: 300,
+     decoration: BoxDecoration(
+       shape: BoxShape.circle,
+       border: Border.all(
+         width: 3,
+         color: Colors.blue,
+       ),
+     ),
+     child: Tooltip(
+       message: "Me",
+       child: CircleAvatar(
+         radius: 80,
+         backgroundImage: AssetImage("assets/dhinakar.jpg"),
+       ),
+     ),
+   );
+  }
+
+Widget nameSocialApps(){
+  return Padding(
+    padding: const EdgeInsets.all(40.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const Text("HI",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
+            color: Colors.blue,
+            fontStyle: FontStyle.normal,
+          ),
+        ),
+        const Text("I'm Dhinakar",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 36,
+              color: Colors.blue,
+              fontStyle: FontStyle.italic,
+            )),
+        const SizedBox(height: 25,),
+        Row(
+          children: [
+            IconButton(onPressed: launchLinkedIn,
+                icon: Image.asset("assets/linkedinlogo.png",
+                  height: 30,
+                  width: 30,)
+            ),
+            IconButton(onPressed: launchInstagram,
+                icon: Image.asset("assets/instagramlogo.png",
+                  height: 30,
+                  width: 30,)
+            ),
+            IconButton(onPressed: launchGmail,
+                icon: Image.asset("assets/gmaillogo.png",
+                  height: 30,
+                  width: 30,)
+            ),
+            IconButton(onPressed: launchGithub,
+                icon: Image.asset("assets/githublogo.png",
+                  height: 30,
+                  width: 30,)
+            ),
+          ],
+        )
+
+      ],
+    ),
+  );
 }

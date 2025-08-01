@@ -20,40 +20,24 @@ class _SkillsPageState extends State<SkillsPage>{
       appBar:AppBar(
         title: Text("Skills"),
       ) ,
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Flexible(
-            child: Container(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
               margin: EdgeInsets.all(20),
-              height: 350,
-              width: 400,
-              child: Column(
-                children: [
-                  Text("Soft Skills",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24,
-                    ),),
-                  Text("Good Communication"),
-                  Text("Decision Making"),
-                  Text("Problem-Solving"),
-                  Text("Teamwork"),
-                  Text("Adaptability"),
-                  Text("Continuous Learning"),
-                  Text("Languages known:"),
-                  Text("Tamil,English"),
-                ],
+              height: 400,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: BoxBorder.all(
+                  color: Colors.grey,
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(20),
               ),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.all(20),
-              height: 350,
-              width: 400,
               child: Column(
                 children: [
+                  SizedBox(height: 20,),
                   Text("Tech Skills",
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
@@ -88,11 +72,44 @@ class _SkillsPageState extends State<SkillsPage>{
                     fontSize: 18,
                   ),),
                   Text(" Flutter, Firebase (Auth,Firestore, Hosting,) Git, GitHub, Android Studio, VS Code" ),
+                  SizedBox(height: 20,),
                 ],
               ),
             ),
-          ),
-        ],
+            Container(
+              margin: EdgeInsets.all(20),
+              height: 350,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                border: BoxBorder.all(
+                  color: Colors.grey,
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(
+                children: [
+                  SizedBox(height: 20,),
+                  Text("Soft Skills",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                    ),),
+                  Text("Good Communication"),
+                  Text("Decision Making"),
+                  Text("Problem-Solving"),
+                  Text("Teamwork"),
+                  Text("Adaptability"),
+                  Text("Continuous Learning"),
+                  Text("Languages known:"),
+                  Text("Tamil,English"),
+
+                ],
+              ),
+            ),
+
+          ],
+        ),
       ),
     );
   }
