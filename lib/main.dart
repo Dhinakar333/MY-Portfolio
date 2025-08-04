@@ -44,18 +44,11 @@ class HomePage extends StatelessWidget {
               Tooltip(
                 message: "Resume",
                 child: IconButton(onPressed: launchResume,
-                  icon: Icon(Icons.download,
-                    color: Colors.black,),
+                  icon: Image.asset("assets/cvlogo.png"),
                   iconSize: 20,
-                  style: ButtonStyle(
-                    side: WidgetStatePropertyAll(BorderSide(
-                        width: 1,
-                        color: Colors.blue
-                    )),
-                  ),
                 ),
               ),
-              const SizedBox(width: 30,)
+              const SizedBox(width: 40,)
             ],
           )
         ],
@@ -75,7 +68,7 @@ class HomePage extends StatelessWidget {
                     nameSocialApps(),
                     const SizedBox(width: 30),
                     // Profile Image
-                    profileImage(),
+                    profileImage(context),
                     const SizedBox(width: 70),
                     // Role and Button
                     roleExploreButton(context),
@@ -167,7 +160,7 @@ class HomePage extends StatelessWidget {
                           color: Colors.blue,
                         ))
                     ),
-                    child: const Text("Contact"),
+                    child: const Text("Contacts"),
                   ),
                   const SizedBox(width: 20),
                 ],
@@ -213,7 +206,7 @@ Widget roleExploreButton(BuildContext context) {
     ],
   );
 }
- Widget profileImage() {
+ Widget profileImage(context) {
   return Container(
      margin: const EdgeInsets.all(20),
      height: 250,
@@ -226,10 +219,16 @@ Widget roleExploreButton(BuildContext context) {
        ),
      ),
      child: Tooltip(
-       message: "Me",
-       child: CircleAvatar(
-         radius: 80,
-         backgroundImage: AssetImage("assets/dhinakar.jpg"),
+       message: "Hire Me",
+       child: GestureDetector(
+         onTap: (){
+           Navigator.push(context,
+               MaterialPageRoute(builder: (context)=>ContactPage()));
+         },
+         child: CircleAvatar(
+           radius: 80,
+           backgroundImage: AssetImage("assets/dhinakar.jpg"),
+         ),
        ),
      ),
    );

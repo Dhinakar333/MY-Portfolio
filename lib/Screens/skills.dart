@@ -18,7 +18,16 @@ class _SkillsPageState extends State<SkillsPage>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar:AppBar(
-        title: Text("Skills"),
+        backgroundColor: Colors.transparent,
+        centerTitle:true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Skills"),
+            SizedBox(width: 15,),
+            Image.asset("assets/achivementlogo.png")
+          ],
+        ),
       ) ,
       body: SingleChildScrollView(
         child: Column(
@@ -26,7 +35,7 @@ class _SkillsPageState extends State<SkillsPage>{
           children: [
             Container(
               margin: EdgeInsets.all(20),
-              height: 400,
+              height: 450,
               width: double.infinity,
               decoration: BoxDecoration(
                 border: BoxBorder.all(
@@ -78,7 +87,7 @@ class _SkillsPageState extends State<SkillsPage>{
             ),
             Container(
               margin: EdgeInsets.all(20),
-              height: 350,
+              height: 450,
               width: double.infinity,
               decoration: BoxDecoration(
                 border: BoxBorder.all(

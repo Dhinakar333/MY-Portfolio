@@ -18,7 +18,18 @@ class _EducationPageState extends State<EducationPage> {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("Education"),
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Education Qualification"),
+            SizedBox(width: 20,),
+            Image.asset("assets/graduatedlogo.png",
+            height: 30,
+              width: 30,
+            )
+          ],
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

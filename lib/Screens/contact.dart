@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_final/main.dart';
 
 import 'contact_links.dart';
 
@@ -20,7 +21,18 @@ class _ContactPageState extends State<ContactPage> {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("Contact"),
+        centerTitle: true,
+        title:Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Contacts"),
+            SizedBox(width: 20,),
+            CircleAvatar(
+              radius: 15,
+              backgroundImage: AssetImage("assets/contact.gif",) ,
+            )
+          ],
+        ),
       ),
       body: Center(
         child: Padding(
@@ -28,23 +40,9 @@ class _ContactPageState extends State<ContactPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(onPressed: launchLinkedIn,
-                      icon: Image.asset("assets/linkedinlogo.png",
-                        height: 30,
-                        width: 30,)
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      launchLinkedIn();
-                    },
-                    child:Text("LinkedIn - Dhinakar S") ,),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(onPressed: launchLinkedIn,
                       icon: Image.asset("assets/linkedinlogo.png",
@@ -62,29 +60,39 @@ class _ContactPageState extends State<ContactPage> {
                         height: 30,
                         width: 30,)
                   ),
-                  Text("Github - Dhinakar333"),
+                  GestureDetector(
+                      onTap: (){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>HomePage()));
+                      },
+                      child: Text("Github - Dhinakar333")),
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(onPressed: launchInstagram,
                       icon: Image.asset("assets/instagramlogo.png",
                         height: 30,
                         width: 30,)
                   ),
-                  Text("Instagram - innocent lover"),
+                  TextButton(onPressed: launchInstagram,
+                      child: Text("Instagram - innocent lover")),
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   IconButton(onPressed: launchGmail,
                       icon: Image.asset("assets/gmaillogo.png",
                         height: 30,
                         width: 30,)
                   ),
-                  Text("Gmail - dhinakard41@gmail.com"),
+                  TextButton(
+                    onPressed: () {
+                      launchGmail();
+                    },
+                    child:Text("Gmail - dhinakard41@gmail.com") ,),
                 ],
               ),
             ],

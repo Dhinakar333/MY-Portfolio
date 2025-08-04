@@ -18,7 +18,17 @@ class _AboutPageState extends State<AboutPage> {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text("About"),
+        titleSpacing: 60,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("About"),
+            SizedBox(width: 40,),
+            Image.asset("assets/cvlogo3.png",
+            height: 30,
+            width: 30,)
+          ],
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
