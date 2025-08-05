@@ -60,16 +60,19 @@ class HomePage extends StatelessWidget {
             children: [
               // Horizontal Profile Section
               SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
+                scrollDirection: Axis.vertical,
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 20,
+                  runSpacing: 20,
                   children: [
-                    SizedBox(width: 60,),
+                    SizedBox(width: 20,),
                     // Intro Text
                     nameSocialApps(),
-                    const SizedBox(width: 30),
+                    SizedBox(width: 10),
                     // Profile Image
                     profileImage(context),
-                    const SizedBox(width: 70),
+                    SizedBox(width: 10),
                     // Role and Button
                     roleExploreButton(context),
                   ],
@@ -77,93 +80,97 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               // Project Button
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const AboutPage()),
-                      );
-                    },
-                    style: ButtonStyle(
-                        side: WidgetStateProperty.all(BorderSide(
-                          color: Colors.blue,
+              Center(
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 10,
+                  runSpacing: 20,
+                  children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AboutPage()),
+                    );
+                  },
+                  style: ButtonStyle(
+                      side: WidgetStateProperty.all(BorderSide(
+                        color: Colors.blue,
+                        width: 2,
+                      ))
+                  ),
+                  child: const Text("About"),
+                ),
+                const SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProjectPage()),
+                    );
+                  },
+                  style: ButtonStyle(
+                      side: WidgetStateProperty.all(BorderSide(
                           width: 2,
-                        ))
-                    ),
-                    child: const Text("About"),
+                          color: Colors.blue
+                      ))
                   ),
-                  const SizedBox(width: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ProjectPage()),
-                      );
-                    },
-                    style: ButtonStyle(
-                        side: WidgetStateProperty.all(BorderSide(
-                            width: 2,
-                            color: Colors.blue
-                        ))
-                    ),
-                    child: const Text("Projects"),
-                  ),
-                  const SizedBox(width: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const SkillsPage()),
-                      );
-                    },
-                    style: ButtonStyle(
-                        side: WidgetStateProperty.all(BorderSide(
-                            width: 2,
-                            color: Colors.blue
-                        ))
-                    ),
-                    child: const Text("Skills"),
-                  ),
-                  const SizedBox(width: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const EducationPage()),
-                      );
-                    },
-                    style: ButtonStyle(
-                        side: WidgetStatePropertyAll(BorderSide(
-                            width: 2,
-                            color: Colors.blue
-                        ))
-                    ),
-                    child: const Text("Education"),
-                  ),
-                  const SizedBox(width: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(
-                              builder: (context) => const ContactPage()));
-                    },
-                    style: ButtonStyle(
-                        side: WidgetStatePropertyAll(BorderSide(
+                  child: const Text("Projects"),
+                ),
+                const SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const SkillsPage()),
+                    );
+                  },
+                  style: ButtonStyle(
+                      side: WidgetStateProperty.all(BorderSide(
                           width: 2,
-                          color: Colors.blue,
-                        ))
-                    ),
-                    child: const Text("Contacts"),
+                          color: Colors.blue
+                      ))
                   ),
-                  const SizedBox(width: 20),
-                ],
+                  child: const Text("Skills"),
+                ),
+                const SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EducationPage()),
+                    );
+                  },
+                  style: ButtonStyle(
+                      side: WidgetStatePropertyAll(BorderSide(
+                          width: 2,
+                          color: Colors.blue
+                      ))
+                  ),
+                  child: const Text("Education"),
+                ),
+                const SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(
+                            builder: (context) => const ContactPage()));
+                  },
+                  style: ButtonStyle(
+                      side: WidgetStatePropertyAll(BorderSide(
+                        width: 2,
+                        color: Colors.blue,
+                      ))
+                  ),
+                  child: const Text("Contacts"),
+                ),
+                const SizedBox(width: 20),
+                 ]
+                ),
               ),
             ],
           ),
@@ -173,115 +180,130 @@ class HomePage extends StatelessWidget {
   }
 }
 
-Widget roleExploreButton(BuildContext context) {
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
-      const Text("Flutter",
-          style: TextStyle(fontSize: 30)),
-      const Text("Developer",
-          style: TextStyle(fontSize: 30)),
-      SizedBox(height: 20,),
-      ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) =>
-                const ProjectPage()),
-          );
-        },
-        style: ButtonStyle(
-            side: WidgetStateProperty.all(BorderSide(
-              color: Colors.blue,
-              width: 2,
-            ))
-        ),
-        child: Text("Explore Works",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 22,
-            )),
-      ),
-    ],
-  );
-}
- Widget profileImage(context) {
-  return Container(
-     margin: const EdgeInsets.all(20),
-     height: 250,
-     width: 300,
-     decoration: BoxDecoration(
-       shape: BoxShape.circle,
-       border: Border.all(
-         width: 3,
-         color: Colors.blue,
-       ),
-     ),
-     child: Tooltip(
-       message: "Hire Me",
-       child: GestureDetector(
-         onTap: (){
-           Navigator.push(context,
-               MaterialPageRoute(builder: (context)=>ContactPage()));
-         },
-         child: CircleAvatar(
-           radius: 80,
-           backgroundImage: AssetImage("assets/dhinakar.jpg"),
-         ),
-       ),
-     ),
-   );
-  }
-
 Widget nameSocialApps(){
   return Padding(
-    padding: const EdgeInsets.all(40.0),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const Text("HI",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 26,
-            color: Colors.blue,
-            fontStyle: FontStyle.normal,
-          ),
-        ),
-        const Text("I'm Dhinakar",
+    padding: const EdgeInsets.all(10),
+    child: Container(
+      height: 300,
+      width: 250,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(height: 90,),
+          const Text("HI",
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 36,
+              fontSize: 26,
               color: Colors.blue,
-              fontStyle: FontStyle.italic,
-            )),
-        const SizedBox(height: 25,),
-        Row(
-          children: [
-            IconButton(onPressed: launchLinkedIn,
-                icon: Image.asset("assets/linkedinlogo.png",
-                  height: 30,
-                  width: 30,)
+              fontStyle: FontStyle.normal,
             ),
-            IconButton(onPressed: launchInstagram,
-                icon: Image.asset("assets/instagramlogo.png",
-                  height: 30,
-                  width: 30,)
-            ),
-            IconButton(onPressed: launchGmail,
-                icon: Image.asset("assets/gmaillogo.png",
-                  height: 30,
-                  width: 30,)
-            ),
-            IconButton(onPressed: launchGithub,
-                icon: Image.asset("assets/githublogo.png",
-                  height: 30,
-                  width: 30,)
-            ),
-          ],
-        )
+          ),
+          const Text("I'm Dhinakar",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 36,
+                color: Colors.blue,
+                fontStyle: FontStyle.italic,
+              )),
+          const SizedBox(height: 20,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(onPressed: launchLinkedIn,
+                  icon: Image.asset("assets/linkedinlogo.png",
+                    height: 30,
+                    width: 30,)
+              ),
+              IconButton(onPressed: launchInstagram,
+                  icon: Image.asset("assets/instagramlogo.png",
+                    height: 30,
+                    width: 30,)
+              ),
+              IconButton(onPressed: launchGmail,
+                  icon: Image.asset("assets/gmaillogo.png",
+                    height: 30,
+                    width: 30,)
+              ),
+              IconButton(onPressed: launchGithub,
+                  icon: Image.asset("assets/githublogo.png",
+                    height: 30,
+                    width: 30,)
+              ),
+            ],
+          )
 
+        ],
+      ),
+    ),
+  );
+}
+
+Widget profileImage(context) {
+  return Container(
+    margin: const EdgeInsets.all(20),
+    height: 250,
+    width: 300,
+    decoration: BoxDecoration(
+      shape: BoxShape.circle,
+      border: Border.all(
+        width: 3,
+        color: Colors.blue,
+      ),
+    ),
+    child: Tooltip(
+      message: "Hire Me",
+      child: GestureDetector(
+        onTap: (){
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context)=>ContactPage()));
+        },
+        child: CircleAvatar(
+          radius: 80,
+          backgroundImage: AssetImage("assets/dhinakar.jpg"),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget roleExploreButton(BuildContext context) {
+  return Container(
+    margin: EdgeInsets.all(10),
+    height: 300,
+    width: 250,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Text("Flutter",
+            style: TextStyle(fontSize: 30)),
+        const Text("Developer",
+            style: TextStyle(fontSize: 30)),
+        SizedBox(height: 20,),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                  const ProjectPage()),
+            );
+          },
+          style: ButtonStyle(
+              side: WidgetStateProperty.all(BorderSide(
+                color: Colors.blue,
+                width: 2,
+              ))
+          ),
+          child: Text("Explore Works",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 22,
+              )),
+        ),
       ],
     ),
   );
 }
+
+
+

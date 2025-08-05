@@ -53,14 +53,17 @@ class _AboutPageState extends State<AboutPage> {
               style: TextStyle(
                 wordSpacing: 2,
                 fontSize: 14,
-              ),),
+              ),
+                textAlign: TextAlign.justify,
+              ),
               Title( color: Colors.lightBlue, 
                 child: Text("Looking for Opportunities",
                   style:TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ) ,),),
-              Text("                     I’m actively looking for full-time roles, internships, or freelance opportunities where I can contribute my skills and grow as a Flutter developer. I’m particularly interested in companies or teams working on impactful, user-focused applications in tech, education, health, or productivity domains.I bring to the table a strong willingness to learn, adapt quickly to new challenges, and work effectively in both independent and collaborative settings."),
+              Text("                     I’m actively looking for full-time roles, internships, or freelance opportunities where I can contribute my skills and grow as a Flutter developer. I’m particularly interested in companies or teams working on impactful, user-focused applications in tech, education, health, or productivity domains.I bring to the table a strong willingness to learn, adapt quickly to new challenges, and work effectively in both independent and collaborative settings.",
+              textAlign: TextAlign.justify,),
 
             ],
           ),

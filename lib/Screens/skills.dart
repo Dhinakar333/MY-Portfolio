@@ -25,7 +25,9 @@ class _SkillsPageState extends State<SkillsPage>{
           children: [
             Text("Skills"),
             SizedBox(width: 15,),
-            Image.asset("assets/achivementlogo.png")
+            Image.asset("assets/achivementlogo.png",
+              height: 26,
+            width: 26,)
           ],
         ),
       ) ,

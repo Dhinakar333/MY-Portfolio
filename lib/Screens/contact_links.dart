@@ -49,3 +49,21 @@ void launchGithub()async{
   }
 }
 
+void launchSyntexa()async{
+  final url = Uri.parse("https://dhinakar333.github.io/Syntexa/");
+  if(await canLaunchUrl(url)){
+    await launchUrl(url,mode: LaunchMode.externalApplication);
+  }else{
+    throw "Could not launch $url";
+  }
+}
+
+void launchSyntexaGithub()async{
+  final url = Uri.parse("https://github.com/Dhinakar333/Syntexa");
+  if(await canLaunchUrl(url)){
+    await launchUrl(url,mode: LaunchMode.externalApplication);
+  }else{
+    throw "Could not launch $url";
+  }
+}
+
