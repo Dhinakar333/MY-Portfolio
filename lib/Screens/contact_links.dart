@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //INSTAGRAM
@@ -66,4 +67,5 @@ void launchSyntexaGithub()async{
     throw "Could not launch $url";
   }
 }
+
 

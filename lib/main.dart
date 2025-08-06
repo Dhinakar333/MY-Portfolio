@@ -64,9 +64,9 @@ class HomePage extends StatelessWidget {
                 child: Wrap(
                   alignment: WrapAlignment.center,
                   spacing: 20,
-                  runSpacing: 20,
+                  runSpacing: 0,
                   children: [
-                    SizedBox(width: 20,),
+                    SizedBox(width: 10,),
                     // Intro Text
                     nameSocialApps(),
                     SizedBox(width: 10),

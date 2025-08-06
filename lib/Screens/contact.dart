@@ -35,71 +35,70 @@ class _ContactPageState extends State<ContactPage> {
         ),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(onPressed: launchLinkedIn,
-                      icon: Image.asset("assets/linkedinlogo.png",
-                        height: 30,
-                        width: 30,)
-                  ),
-                  Text("LinkedIn - Dhinakar S"),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(onPressed: launchGithub,
-                      icon: Image.asset("assets/githublogo.png",
-                        height: 30,
-                        width: 30,)
-                  ),
-                  GestureDetector(
-                      onTap: (){
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context)=>HomePage()));
-                      },
-                      child: Text("Github - Dhinakar333")),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(onPressed: launchInstagram,
-                      icon: Image.asset("assets/instagramlogo.png",
-                        height: 30,
-                        width: 30,)
-                  ),
-                  TextButton(onPressed: launchInstagram,
-                      child: Text("Instagram - innocent lover")),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(onPressed: launchGmail,
-                      icon: Image.asset("assets/gmaillogo.png",
-                        height: 30,
-                        width: 30,)
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      launchGmail();
-                    },
-                    child:Text("Gmail - dhinakard41@gmail.com") ,),
-                ],
-              ),
-            ],
+        child: Center(
+      child: Wrap(
+      alignment: WrapAlignment.center,
+        spacing: 80,
+        runSpacing: 30,
+        children: [
+          _buildContactButton(
+            "assets/githublogo.png",
+            "GitHub - Dhinakar333",
+                () => launchGithub(),
           ),
-        ),
-      ),
+          _buildContactButton(
+            "assets/linkedinlogo.png",
+            "LinkedIn - Dhinakar S",
+                () => launchLinkedIn(),
+          ),
+          _buildContactButton(
+            "assets/instagramlogo.png",
+            "Instagram - innocent lover",
+                () => launchInstagram(),
+          ),
+          _buildContactButton(
+            "assets/whatsapplogo.png",
+            "WhatsApp - 9597587122",
+                () {
+                },
+          ),
+          _buildContactButton(
+            "assets/gmaillogo.png",
+            "Gmail - dhinakard41@gmail.com",
+                () => launchGmail(),
+          ),
 
+        ],
+      ),
+    ),
+
+    ),
     );
   }
 }
+
+Widget _buildContactButton(String assetPath, String text, VoidCallback onTap) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+      // decoration: BoxDecoration(
+      //   border: Border.all(color: Colors.blue.shade300, width: 1),
+      //   borderRadius: BorderRadius.circular(10),
+      // ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            assetPath,
+            height: 30,
+            width: 30,
+          ),
+          SizedBox(width: 10),
+          Text(text),
+        ],
+      ),
+    ),
+  );
+}
+

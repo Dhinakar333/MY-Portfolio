@@ -36,6 +36,7 @@ class _SkillsPageState extends State<SkillsPage>{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
+              padding: EdgeInsets.all(20),
               margin: EdgeInsets.all(20),
               height: 450,
               width: double.infinity,
@@ -82,7 +83,8 @@ class _SkillsPageState extends State<SkillsPage>{
                     fontWeight: FontWeight.w500,
                     fontSize: 18,
                   ),),
-                  Text(" Flutter, Firebase (Auth,Firestore, Hosting,) Git, GitHub, Android Studio, VS Code" ),
+                  Text(" Flutter, Firebase (Auth,Firestore, Hosting,) Git, GitHub, Android Studio, VS Code" ,
+                  textAlign: TextAlign.center,),
                   SizedBox(height: 20,),
                 ],
               ),
@@ -106,6 +108,7 @@ class _SkillsPageState extends State<SkillsPage>{
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
                     ),),
+                  SizedBox(height: 20,),
                   Text("Good Communication"),
                   Text("Decision Making"),
                   Text("Problem-Solving"),

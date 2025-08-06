@@ -35,83 +35,88 @@ bool _isProject4 = false;
                 MouseRegion(
                   onEnter: (_) => setState(() => _isProject1 = true),
                   onExit: (_) => setState(() => _isProject1 = false),
-                  child: AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
-                    height: _isProject1 ? 200 : 200,
-                    width: _isProject1 ? 400 : 150,
-                    curve: Curves.easeInOut,
-                    margin: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                    color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: _isProject1 ? Colors.blue : Colors.black26,
-                          blurRadius: _isProject1 ? 20 : 5,
-                        )
-                      ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text("Syntexa", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                          SizedBox(height: 5),
-                          Text(_isProject1? "":"Flutter Widget Reference App"),
-                          if(!_isProject1)
-                            Image.asset(
-                              "assets/syntexadarklogo.png",
-                              height: _isProject1? 200:100,
-                              width: _isProject1? 200:100,
-                              fit: BoxFit.cover,
-                          ),
-                          SizedBox(height: 10),
-                          Flexible(
-                            child: Text(_isProject1?
-                              "":"Developed a Flutter-based app that displays predefined syntax and descriptions for user-entered Flutter widgets. Designed for offline use with a clean UI to assist beginners in quickly understanding Flutter components.",
-                              style: TextStyle(fontSize: 14),
-                              textAlign: TextAlign.justify,
-                              overflow: _isProject1? TextOverflow.ellipsis :TextOverflow.visible,
-                            ),
-                          ),
-                          if(_isProject1)
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                ElevatedButton(onPressed: ()=>launchSyntexa(),
-                                    style: ButtonStyle(
-                                  backgroundColor: WidgetStatePropertyAll(Colors.grey)
-                                ),
-                                    child: Row(
-                                      children: [
-                                        Text("Demo",style: TextStyle(
-                                        color: Colors.white
-                                        ),),
-                                        SizedBox(width: 5,),
-                                        Icon(Icons.play_circle_outline_outlined,
-                                          color:Colors.black ,),
-                                      ],
-                                    )),
-                                SizedBox(width: 10,),
-                                ElevatedButton(onPressed: ()=>launchSyntexaGithub(),
-                                    style: ButtonStyle(
-                                  backgroundColor:WidgetStatePropertyAll(Colors.grey),
-                                ),
-                                    child: Row(
-                                  children: [
-                                    Text("GitHub",style: TextStyle(
-                                      color: Colors.black
-                                    ),),
-                                    SizedBox(width: 10,),
-                                    Image.asset("assets/githublogo.png",
-                                    height: 24,
-                                    width: 24,),
-                                  ],
-                                )),
-                              ],
-                            ),
+                  child: GestureDetector(
+                    onTap: (){
+                      _isProject1 = !_isProject1;
+                    },
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 300),
+                      height: _isProject1 ? 200 : 200,
+                      width: _isProject1 ? 400 : 150,
+                      curve: Curves.easeInOut,
+                      margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                      color: Colors.grey.shade100,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: _isProject1 ? Colors.blue : Colors.black26,
+                            blurRadius: _isProject1 ? 20 : 5,
+                          )
                         ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text("Syntexa", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                            SizedBox(height: 5),
+                            Text(_isProject1? "":"Flutter Widget Reference App"),
+                            if(!_isProject1)
+                              Image.asset(
+                                "assets/syntexadarklogo.png",
+                                height: _isProject1? 200:100,
+                                width: _isProject1? 200:100,
+                                fit: BoxFit.cover,
+                            ),
+                            SizedBox(height: 10),
+                            Flexible(
+                              child: Text(_isProject1?
+                                "":"Developed a Flutter-based app that displays predefined syntax and descriptions for user-entered Flutter widgets. Designed for offline use with a clean UI to assist beginners in quickly understanding Flutter components.",
+                                style: TextStyle(fontSize: 14),
+                                textAlign: TextAlign.justify,
+                                overflow: _isProject1? TextOverflow.ellipsis :TextOverflow.visible,
+                              ),
+                            ),
+                            if(_isProject1)
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ElevatedButton(onPressed: ()=>launchSyntexa(),
+                                      style: ButtonStyle(
+                                    backgroundColor: WidgetStatePropertyAll(Colors.grey)
+                                  ),
+                                      child: Row(
+                                        children: [
+                                          Text("Demo",style: TextStyle(
+                                          color: Colors.white
+                                          ),),
+                                          SizedBox(width: 5,),
+                                          Icon(Icons.play_circle_outline_outlined,
+                                            color:Colors.black ,),
+                                        ],
+                                      )),
+                                  SizedBox(width: 10,),
+                                  ElevatedButton(onPressed: ()=>launchSyntexaGithub(),
+                                      style: ButtonStyle(
+                                    backgroundColor:WidgetStatePropertyAll(Colors.grey),
+                                  ),
+                                      child: Row(
+                                    children: [
+                                      Text("GitHub",style: TextStyle(
+                                        color: Colors.black
+                                      ),),
+                                      SizedBox(width: 10,),
+                                      Image.asset("assets/githublogo.png",
+                                      height: 24,
+                                      width: 24,),
+                                    ],
+                                  )),
+                                ],
+                              ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -119,83 +124,88 @@ bool _isProject4 = false;
                 MouseRegion(
                   onEnter: (_) => setState(() => _isProject2 = true),
                   onExit: (_) => setState(() => _isProject2 = false),
-                  child: AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
-                    height: _isProject2 ? 200 : 200,
-                    width: _isProject2 ? 400 : 150,
-                    curve: Curves.easeInOut,
-                    margin: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                    color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: _isProject2 ? Colors.blue : Colors.black26,
-                          blurRadius: _isProject2 ? 20 : 5,
-                        )
-                      ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 10,
-                        right: 10,
-                        top: 5,
-                        bottom:20,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text("Migrant Support Hub", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                          SizedBox(height: 5),
-                          Text(_isProject2? "":"Final Year Project"),
-                          if(!_isProject2)
-                            Image.asset(
-                              "assets/msh-logo.png",
-                              height: _isProject2? 200:100,
-                              width: _isProject2? 200:100,
-                              fit: BoxFit.cover,
-                          ),
-                          SizedBox(height: 10),
-                          Flexible(
-                            child: Text(_isProject2?
-                              "":"Developed a full-stack platform to assist migrant workers with job access, legal aid, and essential services. Built with Flutter (mobile), Firebase (Auth & Firestore), and a responsive web frontend (HTML, CSS, JS, Bootstrap) backed by Python Flask and Firestore.",
-                              style: TextStyle(fontSize: 14),
-                              textAlign: TextAlign.justify,
-                              overflow: _isProject2? TextOverflow.ellipsis :TextOverflow.visible,
-                            ),
-                          ),
-                          if(_isProject2)
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                ElevatedButton(onPressed: (){
-
-                                }, style: ButtonStyle(
-                                  backgroundColor: WidgetStatePropertyAll(Colors.grey)
-                                ),
-                                    child: Text("View Demo",style: TextStyle(
-                                    color: Colors.white
-                                ),)),
-                                SizedBox(width: 10,),
-                                ElevatedButton(onPressed: (){
-
-                                },style: ButtonStyle(
-                                  backgroundColor:WidgetStatePropertyAll(Colors.grey),
-                                ),
-                                    child: Row(
-                                  children: [
-                                    Text("GitHub",style: TextStyle(
-                                      color: Colors.black
-                                    ),),
-                                    SizedBox(width: 10,),
-                                    Image.asset("assets/githublogo.png",
-                                    height: 24,
-                                    width: 24,),
-                                  ],
-                                )),
-                              ],
-                            ),
+                  child: GestureDetector(
+                    onTap: (){
+                      _isProject2 = !_isProject2;
+                    },
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 300),
+                      height: _isProject2 ? 200 : 200,
+                      width: _isProject2 ? 400 : 150,
+                      curve: Curves.easeInOut,
+                      margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                      color: Colors.grey.shade100,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: _isProject2 ? Colors.blue : Colors.black26,
+                            blurRadius: _isProject2 ? 20 : 5,
+                          )
                         ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          left: 10,
+                          right: 10,
+                          top: 5,
+                          bottom:20,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text("Migrant Support Hub", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                            SizedBox(height: 5),
+                            Text(_isProject2? "":"Final Year Project"),
+                            if(!_isProject2)
+                              Image.asset(
+                                "assets/msh-logo.png",
+                                height: _isProject2? 200:100,
+                                width: _isProject2? 200:100,
+                                fit: BoxFit.cover,
+                            ),
+                            SizedBox(height: 10),
+                            Flexible(
+                              child: Text(_isProject2?
+                                "":"Developed a full-stack platform to assist migrant workers with job access, legal aid, and essential services. Built with Flutter (mobile), Firebase (Auth & Firestore), and a responsive web frontend (HTML, CSS, JS, Bootstrap) backed by Python Flask and Firestore.",
+                                style: TextStyle(fontSize: 14),
+                                textAlign: TextAlign.justify,
+                                overflow: _isProject2? TextOverflow.ellipsis :TextOverflow.visible,
+                              ),
+                            ),
+                            if(_isProject2)
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ElevatedButton(onPressed: (){
+
+                                  }, style: ButtonStyle(
+                                    backgroundColor: WidgetStatePropertyAll(Colors.grey)
+                                  ),
+                                      child: Text("View Demo",style: TextStyle(
+                                      color: Colors.white
+                                  ),)),
+                                  SizedBox(width: 10,),
+                                  ElevatedButton(onPressed: (){
+
+                                  },style: ButtonStyle(
+                                    backgroundColor:WidgetStatePropertyAll(Colors.grey),
+                                  ),
+                                      child: Row(
+                                    children: [
+                                      Text("GitHub",style: TextStyle(
+                                        color: Colors.black
+                                      ),),
+                                      SizedBox(width: 10,),
+                                      Image.asset("assets/githublogo.png",
+                                      height: 24,
+                                      width: 24,),
+                                    ],
+                                  )),
+                                ],
+                              ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -203,76 +213,81 @@ bool _isProject4 = false;
                 MouseRegion(
                   onEnter: (_) => setState(() => _isProject3 = true),
                   onExit: (_) => setState(() => _isProject3 = false),
-                  child: AnimatedContainer(
-                    duration: Duration(milliseconds: 300),
-                    height: _isProject3 ? 200 : 200,
-                    width: _isProject3 ? 400 : 150,
-                    curve: Curves.easeInOut,
-                    margin: EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                    color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          color: _isProject3 ? Colors.blue : Colors.black26,
-                          blurRadius: _isProject3 ? 20 : 5,
-                        )
-                      ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text("To-Do App", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                          SizedBox(height: 5),
-                          Text(_isProject3? "":"Task Management"),
-                          if(!_isProject3)
-                            Image.asset(
-                              "assets/syntexadarklogo.png",
-                              height: _isProject3? 200:100,
-                              width: _isProject3? 200:100,
-                              fit: BoxFit.cover,
-                          ),
-                          SizedBox(height: 10),
-                          Text(_isProject3?
-                            "":"Developed a Flutter-based app that displays predefined syntax and descriptions for user-entered Flutter widgets. Designed for offline use with a clean UI to assist beginners in quickly understanding Flutter components.",
-                            style: TextStyle(fontSize: 14),
-                            textAlign: TextAlign.justify,
-                            overflow: _isProject3? TextOverflow.ellipsis :TextOverflow.visible,
-                          ),
-                          if(_isProject3)
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                ElevatedButton(onPressed: (){
-
-                                }, style: ButtonStyle(
-                                  backgroundColor: WidgetStatePropertyAll(Colors.grey)
-                                ),
-                                    child: Text("Demo",style: TextStyle(
-                                    color: Colors.white
-                                ),)),
-                                SizedBox(width: 10,),
-                                ElevatedButton(onPressed: (){
-
-                                },style: ButtonStyle(
-                                  backgroundColor:WidgetStatePropertyAll(Colors.grey),
-                                ),
-                                    child: Row(
-                                  children: [
-                                    Text("GitHub",style: TextStyle(
-                                      color: Colors.black
-                                    ),),
-                                    SizedBox(width: 10,),
-                                    Image.asset("assets/githublogo.png",
-                                    height: 24,
-                                    width: 24,),
-                                  ],
-                                )),
-                              ],
-                            ),
+                  child: GestureDetector(
+                    onTap: (){
+                      _isProject3 = !_isProject3;
+                    },
+                    child: AnimatedContainer(
+                      duration: Duration(milliseconds: 300),
+                      height: _isProject3 ? 200 : 200,
+                      width: _isProject3 ? 400 : 150,
+                      curve: Curves.easeInOut,
+                      margin: EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                      color: Colors.grey.shade100,
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            color: _isProject3 ? Colors.blue : Colors.black26,
+                            blurRadius: _isProject3 ? 20 : 5,
+                          )
                         ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text("To-Do App", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                            SizedBox(height: 5),
+                            Text(_isProject3? "":"Task Management"),
+                            if(!_isProject3)
+                              Image.asset(
+                                "assets/syntexadarklogo.png",
+                                height: _isProject3? 200:100,
+                                width: _isProject3? 200:100,
+                                fit: BoxFit.cover,
+                            ),
+                            SizedBox(height: 10),
+                            Text(_isProject3?
+                              "":"Developed a Flutter-based app that displays predefined syntax and descriptions for user-entered Flutter widgets. Designed for offline use with a clean UI to assist beginners in quickly understanding Flutter components.",
+                              style: TextStyle(fontSize: 14),
+                              textAlign: TextAlign.justify,
+                              overflow: _isProject3? TextOverflow.ellipsis :TextOverflow.visible,
+                            ),
+                            if(_isProject3)
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  ElevatedButton(onPressed: (){
+
+                                  }, style: ButtonStyle(
+                                    backgroundColor: WidgetStatePropertyAll(Colors.grey)
+                                  ),
+                                      child: Text("Demo",style: TextStyle(
+                                      color: Colors.white
+                                  ),)),
+                                  SizedBox(width: 10,),
+                                  ElevatedButton(onPressed: (){
+
+                                  },style: ButtonStyle(
+                                    backgroundColor:WidgetStatePropertyAll(Colors.grey),
+                                  ),
+                                      child: Row(
+                                    children: [
+                                      Text("GitHub",style: TextStyle(
+                                        color: Colors.black
+                                      ),),
+                                      SizedBox(width: 10,),
+                                      Image.asset("assets/githublogo.png",
+                                      height: 24,
+                                      width: 24,),
+                                    ],
+                                  )),
+                                ],
+                              ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
